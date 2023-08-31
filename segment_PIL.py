@@ -13,15 +13,15 @@ def convert_to_grayscale(image):
 
 #input_directory = r"/home/braillic/Braillic/Segmentation to remove black background/Otsu_Thresholding/Original Images/Chan_Sau_Lin_Sherring/t1_fl3d_sag_brain_lab_C_6"
 
-input_directory = r"X:\Braillic\Otsu_Thresholding\Original Images\Chan_Sau_Lin_Sherring\t1_fl3d_sag_brain_lab_C_6"
+input_directory = r"/home/braillic/Braillic/Segmentation to remove black background/Otsu_Thresholding/Original Images/BRAINIX/Gardner_Paul_Raymond_Randsley/Head_Brain_Sth - MR20210802080844/t1_mprage_sag_p2_09__FA_12_brain_14"
 
 dicom_files = [os.path.join(input_directory, file) for file in os.listdir(input_directory) if file.endswith('.dcm')]
 
 
 # Output Folder where images will be saved
 
-#output_base_folder = r"/home/braillic/Braillic/Segmentation to remove black background/Otsu_Thresholding/Segmentated Images"
-output_base_folder = r"X:\Braillic\Otsu_Thresholding\Segmentated Images"
+output_base_folder = r"/home/braillic/Braillic/Segmentation to remove black background/Otsu_Thresholding/Segmentated Images"
+# output_base_folder = r"X:\Braillic\Otsu_Thresholding\Segmentated Images"
 
 path_parts = input_directory.split(os.sep)
 output_file_name = path_parts[-2] + "_" + path_parts[-1]

@@ -1,0 +1,36 @@
+Here is some pseudo code for the skull stripping algorithm described in the paper:
+
+1. Load MRI image
+
+2. Threshold image to separate foreground and background
+   - Try global, local, and mixed thresholding
+   - Select mixed thresholding for best results
+
+3. Apply morphological operations on thresholded image
+   - Perform dilation and erosion with structural element to fill gaps
+   - Use disk or diamond shaped structuring element
+   - Remove small noise areas 
+   - Result is mask image
+
+4. Detect edges of mask image
+   - Use Canny edge detection
+   - Verify mask edges match brain edges in original image
+
+5. Identify largest connected component in mask
+   - Label mask image
+   - Count pixels for each label
+   - Largest label area is brain region
+
+6. Create final mask from largest component 
+   - Set largest component pixels to 255, rest to 0
+   - Multiply final mask with original image 
+   - Result is skull stripped image
+
+7. Save skull stripped image
+
+So in summary:
+- Threshold to separate brain/background
+- Morphological operations to fill gaps in brain area
+- Edge detection to verify mask matches brain outline
+- Find largest connected region as brain mask
+- Apply mask to original image
